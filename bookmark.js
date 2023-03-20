@@ -10,7 +10,7 @@ javascript:(function() {
         .replace(non_letters_re, "-")
         .replace(trailing_dash_re, '');
       template.innerHTML = dom.innerHTML;
-      ['.items-end', 'img', 'svg', 'button', ':empty'].forEach(selector => {
+      ['.items-end', 'img', 'button', ':empty'].forEach(selector => {
         template.content.querySelectorAll(selector).forEach(node => {
           node.remove();
         });
