@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="Description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <h1>ChatGPT saving Conversation Bookmarklet</h1>
+
+  <p>Drag this link to your bookmarks <a id="bookmark">Save ChatGPT</a></p>
+
+  <script>
+   async function hash(branch) {
+       try {
+           var url = `https://api.github.com/repos/freegroup/gpt-4-gamer-creator/commits?sha=${branch}`;
+           var res = await fetch(url);
+           var data = await res.json();
+           return data[0].sha;
+       } catch (e) {
+           return branch;
+       }
+   }
+   hash('main').then(hash => {
+       return fetch(`https://cdn.jsdelivr.net/gh/freegroup/gpt-4-gamer-creator@${hash}/bookmark.js`);
+   }).then(res => res.text())
+     .then(text => bookmark.href = text);
+  </script>
+</body>
+</html>

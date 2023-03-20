@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Pacman</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #222;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .snake-segment {
+            border-radius: 3px;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+        }
+
+        #game-container {
+            display: grid;
+            grid-template-rows: repeat(20, 20px);
+            grid-template-columns: repeat(20, 20px);
+            gap: 1px;
+            width: 420px;
+            height: 420px;
+            border: 1px solid #000;
+            background-color: #000;
+        }
+    
+        .cell {
+            width: 20px;
+            height: 20px;
+        }
+    
+        .snake {
+            background-color: #00ff00;
+            border-radius: 3px;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+        }
+    
+        .pill {
+            background-color: #ffff00;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(255, 255, 0, 0.8);
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="game-container"></div>
+    <script src="game.js"></script>
+</body>
+</html>
